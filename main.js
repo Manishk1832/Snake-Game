@@ -69,6 +69,20 @@ class Snake{
         else{
             this.cells.shift()
         }
+         //check with body collision
+
+        for(let i = 0 ; i< this.cells.length-1 ; i++){
+          
+            const cell = this.cells[i];
+            if(cell.x === headX && cell.y  === headY){
+                gameOver()
+
+                return;
+            }
+           
+
+
+        }
         
 
         if(this.direction === "left"){
